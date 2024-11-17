@@ -1,10 +1,12 @@
 {
   "name": "kite-publisher",
-  "version": "1.0.0",
+  "version": "1.0.001",
   "description": "The Kite Publisher Javascript plugin lets you add one-click trade buttons to your webpage. It works like a basket combined with a payment gateway, where an inline popup opens on your webpage, guides the user through a trade, and lands the user back on your page. As described in the offsite order execution section, it is possible to capture the request_token from this flow to start a Kite Connect session as well.\nYou can add one or more stocks to the basket (maximum 10) dynamically using the Javascript plugin, or embed simple static buttons using plain HTML.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": ["dist"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/cvasingh/kite-publisher/issues"
   },
-  "homepage": "https://github.com/cvasingh/kite-publisher#readme"
+  "homepage": "https://github.com/cvasingh/kite-publisher#readme",
+  "devDependencies": {
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  }
 }
